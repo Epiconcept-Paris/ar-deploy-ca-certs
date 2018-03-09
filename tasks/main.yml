@@ -1,0 +1,13 @@
+---
+
+- name: déploiement des certificats
+  copy: src="files/{{ item }}" dest="{{ path_ca_certificats }}/{{ item }}" group=root owner=root mode=0644
+  with_items:
+    - thawte_SHA256_SSL_CA.crt
+  become: yes
+  register: certs_deploiement
+
+- name: rafraichissement des certificats
+  shell: update-ca-certificates
+  become: yes
+  when: certs_deploiement.changed
