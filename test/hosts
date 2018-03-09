@@ -1,1 +1,0 @@
-test_ar_deploy_ca_certs	ansible_connection=docker

@@ -2,4 +2,4 @@
 
 - hosts: all
   roles: 
-  - { role: ar-deploy-ca-certs, tags: ['certs'] }
+  - { role: ar-deploy-ca-certs }

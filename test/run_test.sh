@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cntname=$(cat hosts | awk '{print $1}')
+cntname=$(basename $(dirname $(pwd)))
 cntimg=img_$cntname
 
 function runtests
